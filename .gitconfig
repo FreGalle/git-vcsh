@@ -12,10 +12,18 @@
   frag = magenta
   old = red
   new = green
+  commit = yellow
+  whitespace = normal red
 [color "status"]
   added = yellow
   changed = green
   unchanged = cyan
+  untracked = red
+  nobranch = red
+[color "interactive"]
+  header = yellow
+  help = red
+  prompt = blue
 [alias]
 	co = checkout
 
