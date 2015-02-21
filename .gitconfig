@@ -22,26 +22,12 @@
   # Add to staging area
   a  = add
   ap = add --patch
+  patch = add --patch
 
   # Commit
-	c  = commit --verbose
-  cm = commit -m
+  c  = commit --verbose
+  cm = commit --verbose -m
   amend = commit --amend --verbose
-
-  # Short and verbose statuses
-  s  = status --short --branch
-  sv = status
-
-  # Overview of branches
-	b   = branch
-  bl  = branch --verbose
-  bla = branch --verbose --all
-
-  # Overview of history
-  ls = log --pretty=format:"%C(yellow)%h\\ %Cred%d\\ %Creset%s\\ %C(bold\\ blue)<%cn>%Creset" --decorate --graph
-  lsd = log --pretty=format:"%C(yellow)%h\\ %Cgreen%ad%Cred%d\\ %Creset%s\\ %C(bold\\ blue)<%cn>%Creset" --decorate --graph --date=short
-  ll = log --pretty=format:"%C(yellow)%h\\ %Cred%d\\ %Creset%s\\ %C(bold\\ blue)<%cn>%Creset%n" --decorate --numstat --graph
-  lld = log --pretty=format:"%C(yellow)%h\\ %Cred%d\\ %Creset%s\\ %Cgreen(%ad)\\ %C(bold\\ blue)<%cn>%Creset%n" --decorate --graph --numstat --date=short
 
   # Unstage the changes to some files
   unstage = reset HEAD --
@@ -49,11 +35,38 @@
   # Undo the last commit
   undo = reset "HEAD^"
 
+  # Short and verbose statuses
+  s  = status --short --branch
+  sv = status
+
+  # Overview of branches
+  b   = branch
+  bl  = branch --verbose
+  bla = branch --verbose --all
+
+  # Show details of last commit
+  details = log -n1 -p --format=fuller
+
+  # Show list of changes between two commits
+  changes="!f() { git log --pretty=format:'* %s' $1..$2;  }; f"
+
+  # Overview of history
+  ls = log --pretty=format:"%C(yellow)%h\\ %Cred%d\\ %Creset%s\\ %C(bold\\ blue)<%cn>%Creset" --decorate --graph
+  lsd = log --pretty=format:"%C(yellow)%h\\ %Cgreen%ad%Cred%d\\ %Creset%s\\ %C(bold\\ blue)<%cn>%Creset" --decorate --graph --date=short
+  ll = log --pretty=format:"%C(yellow)%h\\ %Cred%d\\ %Creset%s\\ %C(bold\\ blue)<%cn>%Creset%n" --decorate --numstat --graph
+  lld = log --pretty=format:"%C(yellow)%h\\ %Cred%d\\ %Creset%s\\ %Cgreen(%ad)\\ %C(bold\\ blue)<%cn>%Creset%n" --decorate --graph --numstat --date=short
+
   # Show files that are being ignored due to git update-index --assume-unchanged
   ignored = !git ls-files -v `git rev-parse --show-toplevel` | grep "^[a-z]"
 
+  # Remove deleted files
+  r = !git ls-files -z --deleted | xargs -0 git rm
+
+  # List all tags
+  tags = tag -l
+
   # list aliases
-  alias = "!git config -l | grep alias | cut -c 7-"
+  alias = "!git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort"
 [core]
 	editor = vim
 	quotepath = false
