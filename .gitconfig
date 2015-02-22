@@ -52,6 +52,10 @@
   bl  = branch --verbose
   bla = branch --verbose --all
 
+  # When merging
+  ours = checkout --ours --
+  theirs = checkout --theirs --
+
   # Show details of last commit
   details = log -n1 -p --format=fuller
 
