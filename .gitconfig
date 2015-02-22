@@ -78,7 +78,7 @@
   tags = tag -l
 
   # list aliases
-  alias = "!git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort"
+  alias = "!git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort | column -t -s $'\\t'"
 [core]
 	editor = vim
 	quotepath = false
