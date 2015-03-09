@@ -15,8 +15,8 @@
   commit = yellow
   whitespace = normal red
 [color "status"]
-  added = yellow
-  changed = green
+  added = green
+  changed = yellow
   unchanged = cyan
   untracked = red
   nobranch = red
