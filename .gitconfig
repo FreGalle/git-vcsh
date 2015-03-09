@@ -91,6 +91,7 @@
 [diff]
 	algorithm = patience
 	mnemonicprefix = true
+	renames = copies
 [url "git@github.com:"]
 	insteadOf = gh:
 [url "git@bitbucket.org:"]
