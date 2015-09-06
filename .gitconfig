@@ -46,6 +46,7 @@
   # Short and verbose statuses
   s  = status --short --branch
   sv = status
+  watch = "!while :; do clear; git status --short; git --no-pager diff --shortstat; sleep 2; done"
 
   # Overview of branches
   b   = branch
