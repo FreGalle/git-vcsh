@@ -47,11 +47,15 @@
   s  = status --short --branch
   sv = status
   watch = "!while :; do clear; git status --short; git --no-pager diff --shortstat; sleep 2; done"
+  watchh = "!while :; do clear; git log; sleep 2; done"
 
   # Overview of branches
   b   = branch
   bl  = branch --verbose
   bla = branch --verbose --all
+
+  # Diffs
+  sd = diff --staged
 
   # When merging
   ours = checkout --ours --
