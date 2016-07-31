@@ -1,8 +1,8 @@
 [user]
-	email = frederikgalle@fastmail.fm
-	name = Frederik Galle
+  email = frederikgalle@fastmail.fm
+  name = Frederik Galle
 [color]
-	ui = auto
+  ui = auto
 [color "branch"]
   current = green
   local = yellow
@@ -25,7 +25,7 @@
   help = red
   prompt = blue
 [alias]
-	co = checkout
+  co = checkout
 
   # Add to staging area
   a  = add
@@ -88,21 +88,21 @@
   # list aliases
   alias = "!git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort | column -t -s $'\\t'"
 [core]
-	editor = vim
-	quotepath = false
-	excludesfile = ~/.gitignore
-	autocrlf = input
+  editor = vim
+  quotepath = false
+  excludesfile = ~/.gitignore
+  autocrlf = input
 [push]
-	default = upstream
+  default = upstream
 [help]
-	autocorrect = 1
+  autocorrect = 1
 [diff]
-	algorithm = patience
-	mnemonicprefix = true
-	renames = copies
+  algorithm = patience
+  mnemonicprefix = true
+  renames = copies
 [url "git@github.com:"]
-	insteadOf = gh:
+  insteadOf = gh:
 [url "git@bitbucket.org:"]
   insteadOf = bb
 [rebase]
-	autosquash = true
+  autosquash = true
