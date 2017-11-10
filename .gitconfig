@@ -6,7 +6,7 @@
 [color "branch"]
   current = green
   local = yellow
-  remote = yellow reverse
+  remote = cyan
 [color "diff"]
   meta = yellow
   frag = magenta
@@ -18,13 +18,15 @@
   added = green
   changed = yellow
   unchanged = cyan
-  untracked = red
+  untracked = cyan
   nobranch = red
 [color "interactive"]
   header = yellow
   help = red
   prompt = blue
 [alias]
+  git = !exec git
+
   co = checkout
 
   # Add to staging area
@@ -34,7 +36,7 @@
 
   # Commit
   c  = commit --verbose
-  cm = commit --verbose -m
+  cm = commit -m
   amend = commit --amend --verbose
 
   # Unstage the changes to some files
@@ -44,7 +46,7 @@
   undo = reset "HEAD^"
 
   # Short and verbose statuses
-  s  = status --short --branch
+  s  = "!printf '\n' && git status --short $@ && printf '\n'"
   sv = status
   watch = "!while :; do clear; git status --short; git --no-pager diff --shortstat; sleep 2; done"
   watchh = "!while :; do clear; git log; sleep 2; done"
@@ -56,6 +58,7 @@
 
   # Diffs
   sd = diff --staged
+  d = diff
 
   # When merging
   ours = checkout --ours --
@@ -69,9 +72,9 @@
 
   # Overview of history
   ls = log --pretty=format:"%C(yellow)%h\\ %Cred%d\\ %Creset%s\\ %C(bold\\ blue)<%cn>%Creset" --decorate --graph
-  lsd = log --pretty=format:"%C(yellow)%h\\ %Cgreen%ad%Cred%d\\ %Creset%s\\ %C(bold\\ blue)<%cn>%Creset" --decorate --graph --date=short
+  lsd = log --pretty=format:"%C(yellow)%h\\ %Cgreen%ad%Cred%d\\ %Creset%s\\ %C(bold\\ blue)<%cn>%Creset" --decorate --graph --date=relative
   ll = log --pretty=format:"%C(yellow)%h\\ %Cred%d\\ %Creset%s\\ %C(bold\\ blue)<%cn>%Creset%n" --decorate --numstat --graph
-  lld = log --pretty=format:"%C(yellow)%h\\ %Cred%d\\ %Creset%s\\ %Cgreen(%ad)\\ %C(bold\\ blue)<%cn>%Creset%n" --decorate --graph --numstat --date=short
+  lld = log --pretty=format:"%C(yellow)%h\\ %Cred%d\\ %Creset%s\\ %Cgreen(%ad)\\ %C(bold\\ blue)<%cn>%Creset%n" --decorate --graph --numstat --date=relative
 
   # Show files that are being ignored due to git update-index --assume-unchanged
   ignored = !git ls-files -v `git rev-parse --show-toplevel` | grep "^[a-z]"
@@ -85,10 +88,13 @@
   # Exclude file locally
   exclude = !sh -c 'echo "$1" >> .git/info/exclude' -
 
+  # Prune deleted branches
+  prune = fetch --prune
+
   # list aliases
   alias = "!git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort | column -t -s $'\\t'"
 [core]
-  editor = vim
+  editor = nvim
   quotepath = false
   excludesfile = ~/.gitignore
   autocrlf = input
@@ -100,9 +106,17 @@
   algorithm = patience
   mnemonicprefix = true
   renames = copies
+  submodule=log
 [url "git@github.com:"]
   insteadOf = gh:
 [url "git@bitbucket.org:"]
   insteadOf = bb
 [rebase]
   autosquash = true
+  autostash = true
+[merge]
+  conflictstyle = diff3
+[push]
+  followTags = true
+[status]
+  showUntrackedFiles = all
