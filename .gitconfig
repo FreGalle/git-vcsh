@@ -59,6 +59,7 @@
   # Diffs
   sd = diff --staged
   d = diff
+  sdiff = "!git submodule foreach 'git diff'"
 
   # When merging
   ours = checkout --ours --
@@ -100,6 +101,7 @@
   autocrlf = input
 [push]
   default = upstream
+  recurseSubmodules = check
 [help]
   autocorrect = 1
 [diff]
@@ -119,4 +121,4 @@
 [push]
   followTags = true
 [status]
-  showUntrackedFiles = all
+  submodulesummary = 1
