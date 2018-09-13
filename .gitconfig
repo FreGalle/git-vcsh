@@ -31,6 +31,7 @@
 
   # Add to staging area
   a  = add
+  up = add --update --patch
   ap = add --patch
   patch = add --patch
 
