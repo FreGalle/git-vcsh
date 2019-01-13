@@ -123,3 +123,5 @@
   followTags = true
 [status]
   submodulesummary = 1
+[init]
+	templatedir = ~/.git_template
