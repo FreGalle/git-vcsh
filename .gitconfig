@@ -72,9 +72,9 @@
 
   # Overview of history
   ls = log --pretty=format:"%C(yellow)%h\\ %Cred%d\\ %Creset%s\\ %C(bold\\ blue)<%cn>%Creset" --decorate --graph
-  lsd = log --pretty=format:"%C(yellow)%h\\ %Cgreen%ad%Cred%d\\ %Creset%s\\ %C(bold\\ blue)<%cn>%Creset" --decorate --graph --date=relative
+  lsd = log --pretty=format:"%C(yellow)%h\\ %Cgreen%ad%Cred%d\\ %Creset%s\\ %C(bold\\ blue)<%cn>%Creset" --decorate --graph
   ll = log --pretty=format:"%C(yellow)%h\\ %Cred%d\\ %Creset%s\\ %C(bold\\ blue)<%cn>%Creset%n" --decorate --numstat --graph
-  lld = log --pretty=format:"%C(yellow)%h\\ %Cred%d\\ %Creset%s\\ %Cgreen(%ad)\\ %C(bold\\ blue)<%cn>%Creset%n" --decorate --graph --numstat --date=relative
+  lld = log --pretty=format:"%C(yellow)%h\\ %Cred%d\\ %Creset%s\\ %Cgreen(%ad)\\ %C(bold\\ blue)<%cn>%Creset%n" --decorate --graph --numstat
 
   # Show files that are being ignored due to git update-index --assume-unchanged
   ignored = !git ls-files -v `git rev-parse --show-toplevel` | grep "^[a-z]"
@@ -120,6 +120,8 @@
   mnemonicprefix = true
   renames = copies
   submodule=log
+[log]
+  date = "auto:human"
 [rebase]
   autosquash = true
   autostash = true
