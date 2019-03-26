@@ -64,10 +64,10 @@
   changes="!f() { git log --pretty=format:'* %s' $1..$2;  }; f"
 
   # Overview of history
-  ls = log --pretty=format:"%C(yellow)%h\\ %Cred%d\\ %Creset%s\\ %C(bold\\ blue)<%cn>%Creset" --decorate --graph
-  lsd = log --pretty=format:"%C(yellow)%h\\ %Cgreen%ad%Cred%d\\ %Creset%s\\ %C(bold\\ blue)<%cn>%Creset" --decorate --graph
-  ll = log --pretty=format:"%C(yellow)%h\\ %Cred%d\\ %Creset%s\\ %C(bold\\ blue)<%cn>%Creset%n" --decorate --numstat --graph
-  lld = log --pretty=format:"%C(yellow)%h\\ %Cred%d\\ %Creset%s\\ %Cgreen(%ad)\\ %C(bold\\ blue)<%cn>%Creset%n" --decorate --graph --numstat
+  sl = log --oneline --decorate -20
+  sla = log --oneline --decorate --graph --all -20
+  slp = log --oneline --decorate
+  slap = log --oneline --decorate --graph --all
 
   # Show files that are being ignored due to git update-index --assume-unchanged
   ignored = !git ls-files -v `git rev-parse --show-toplevel` | grep "^[a-z]"
