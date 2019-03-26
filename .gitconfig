@@ -100,6 +100,8 @@
 [push]
   default = upstream
   recurseSubmodules = check
+[fetch]
+  prune = true
 [help]
   autocorrect = 1
 [diff "bin"]
