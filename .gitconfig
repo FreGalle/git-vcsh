@@ -60,13 +60,6 @@
   d = diff
   sdiff = "!git submodule foreach 'git diff'"
 
-  # When merging
-  ours = checkout --ours --
-  theirs = checkout --theirs --
-
-  # Show details of last commit
-  details = log -n1 -p --format=fuller
-
   # Show list of changes between two commits
   changes="!f() { git log --pretty=format:'* %s' $1..$2;  }; f"
 
@@ -81,9 +74,6 @@
 
   # Remove deleted files
   r = !git ls-files -z --deleted | xargs -0 git rm
-
-  # List all tags
-  tags = tag -l
 
   # Exclude file locally
   exclude = !sh -c 'echo "$1" >> .git/info/exclude' -
