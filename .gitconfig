@@ -132,7 +132,3 @@
   submodulesummary = 1
 [init]
   templatedir = ~/.git_template
-[url "git@github.com:"]
-  insteadOf = gh:
-[url "git@bitbucket.org:"]
-  insteadOf = bb
