@@ -132,3 +132,5 @@
   submodulesummary = 1
 [init]
   templatedir = ~/.git_template
+[hooks "confirm"]
+	match = TODO
