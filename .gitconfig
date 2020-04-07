@@ -134,3 +134,5 @@
   templatedir = ~/.git_template
 [hooks "confirm"]
 	match = TODO
+[commit]
+	template = ~/.gitmessage
