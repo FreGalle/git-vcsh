@@ -132,3 +132,5 @@
 	match = TODO
 [commit]
 	template = ~/.gitmessage
+[url "github.com:"]
+  insteadOf = github:
