@@ -135,6 +135,8 @@
 	template = ~/.gitmessage
 [url "github.com:"]
   insteadOf = github:
+[url "git@github.com:"]
+  insteadOf = https://github.com
 [interactive]
   diffFilter = delta --color-only
 [delta]
