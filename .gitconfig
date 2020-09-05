@@ -90,6 +90,7 @@
   alias = "!git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort | column -t -s $'\\t'"
 [core]
   editor = nvim
+  pager = delta
   quotepath = false
   excludesfile = ~/.gitignore
   autocrlf = input
@@ -134,3 +135,12 @@
 	template = ~/.gitmessage
 [url "github.com:"]
   insteadOf = github:
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  features = decorations
+  whitespace-error-style = 22 reverse
+[delta "decorations"]
+  commit-decoration-style = bold yellow box ul
+  file-style = bold yellow ul
+  file-decoration-style = none
