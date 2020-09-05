@@ -126,7 +126,7 @@
 [push]
   followTags = true
 [status]
-  submodulesummary = 1
+  submodulesummary = -1 # unlimited
 [init]
   templatedir = ~/.git_template
 [hooks "confirm"]
