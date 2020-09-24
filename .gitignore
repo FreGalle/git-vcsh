@@ -1,13 +1,42 @@
 # OSX
-# -------------------------------------
 .DS_Store
-# Thumbnails
 ._*
 
 # Windows
-# -------------------------------------
 Thumbs.db
 
+# Python artifacts
+*.pyc
+*.egg-info
+.pydevproject
+
+# Frontend
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Generated files
+bin/
+target/
+
+# VSCode files
+.vscode/
+
+# Eclipse files
+.classpath
+.project
+.settings
+.factorypath
+.checkstyle
+
+# IntelliJ files
+.idea
+*.iml
+
 # General
-# -------------------------------------
+*~
+*.swp
+*.orig
 .tags
+
+
