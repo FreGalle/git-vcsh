@@ -58,6 +58,7 @@
   # Diffs
   sd = diff --staged
   d = diff
+  dt = difftool --no-symlinks --dir-diff
   sdiff = "!git submodule foreach 'git diff'"
 
   # Show list of changes between two commits
@@ -113,6 +114,12 @@
   mnemonicprefix = true
   renames = copies
   submodule=log
+  tool = kitty
+[difftool]
+  prompt = false
+  trustExitCode = true
+[difftool "kitty"]
+  cmd = kitty +kitten diff $LOCAL $REMOTE
 [log]
   date = "auto:human"
 [rebase]
