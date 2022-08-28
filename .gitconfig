@@ -124,7 +124,9 @@
   # [default] space-before-tab: looks for spaces before tabs at the beginning of a line
   whitespace = space-before-tab,-indent-with-non-tab,trailing-space
 [push]
-  default = upstream
+  autoSetupRemote = true
+  default = current
+  followTags = true
   recurseSubmodules = check
 [fetch]
   prune = true
@@ -154,8 +156,6 @@
   conflictstyle = diff3
 [mergetool]
   keepBackup = false
-[push]
-  followTags = true
 [status]
   submodulesummary = -1 # unlimited
 [init]
