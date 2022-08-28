@@ -42,7 +42,7 @@
   unstage = reset HEAD --
 
   # Undo the last commit
-  undo = reset "HEAD^"
+  undo = reset --soft "HEAD^"
 
   # Short and verbose statuses
   s  = "!f() { printf '\\n' && cd -- ${GIT_PREFIX:-.}; git status --short $@ && printf '\\n'; }; f"
