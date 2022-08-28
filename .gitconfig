@@ -124,6 +124,7 @@
   # [default] space-before-tab: looks for spaces before tabs at the beginning of a line
   whitespace = space-before-tab,-indent-with-non-tab,trailing-space
   attributesfile = ~/.gitattributes
+  hooksPath = /Users/fgalle/.git_hooks
 [push]
   autoSetupRemote = true
   default = current
@@ -160,8 +161,6 @@
   keepBackup = false
 [status]
   submodulesummary = -1 # unlimited
-[init]
-  templatedir = ~/.git_template
 [hooks "confirm"]
 	match = TODO
 [commit]

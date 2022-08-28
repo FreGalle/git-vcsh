@@ -1,9 +1,8 @@
 *
 !/.gitmessage
 !/.gitattributes
-!/.git_template
-!/.git_template/hooks
-!/.git_template/hooks/**
+!/.git_hooks
+!/.git_hooks/**
 !/.gitconfig
 !/.gitignore
 !/.gitignore.d
