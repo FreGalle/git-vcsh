@@ -155,6 +155,7 @@
 [merge]
   tool = vimdiff
   conflictstyle = diff3
+  autostash = true
 [mergetool]
   keepBackup = false
 [status]
