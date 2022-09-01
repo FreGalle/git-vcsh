@@ -1,6 +1,18 @@
 [user]
   email = frederikgalle@fastmail.fm
   name = Frederik Galle
+[core]
+  editor = nvim
+  pager = delta
+  quotepath = false
+  excludesfile = ~/.gitignore
+  autocrlf = input
+  # Treat spaces before tabs and all kinds of trailing whitespace as an error
+  # [default] trailing-space: looks for spaces at the end of a line
+  # [default] space-before-tab: looks for spaces before tabs at the beginning of a line
+  whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+  attributesfile = ~/.gitattributes
+  hooksPath = /Users/fgalle/.git_hooks
 [color "branch"]
   current = green
   local = yellow
@@ -113,18 +125,6 @@
 
   # list aliases
   alias = "!git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort | column -t -s $'\\t'"
-[core]
-  editor = nvim
-  pager = delta
-  quotepath = false
-  excludesfile = ~/.gitignore
-  autocrlf = input
-  # Treat spaces before tabs and all kinds of trailing whitespace as an error
-  # [default] trailing-space: looks for spaces at the end of a line
-  # [default] space-before-tab: looks for spaces before tabs at the beginning of a line
-  whitespace = space-before-tab,-indent-with-non-tab,trailing-space
-  attributesfile = ~/.gitattributes
-  hooksPath = /Users/fgalle/.git_hooks
 [push]
   autoSetupRemote = true
   default = current
