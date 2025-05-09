@@ -1,6 +1,8 @@
 [user]
   email = frederikgalle@fastmail.fm
   name = Frederik Galle
+[includeIf "gitdir:~/src/"]
+  path = ~/src/.gitconfig
 [core]
   editor = nvim
   pager = delta
