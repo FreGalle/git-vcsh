@@ -160,7 +160,7 @@
   autostash = true
 [merge]
   tool = vimdiff
-  conflictstyle = diff3
+  conflictstyle = zdiff3
   autostash = true
 [mergetool]
   keepBackup = false
