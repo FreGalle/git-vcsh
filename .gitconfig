@@ -88,7 +88,7 @@
   ignored = !git ls-files -v `git rev-parse --show-toplevel` | grep "^[a-z]"
 
   # Remove deleted files
-  r = !git ls-files -z --deleted | xargs -0 git rm
+  r = !git ls-files -z --deleted | xargs -r -0 git rm
 
   # Exclude file locally
   exclude = !sh -c 'echo "$1" >> .git/info/exclude' -
@@ -120,9 +120,9 @@
   tidy-remote-dr = "!git remote prune origin --dry-run | grep 'origin/' | sed 's/^.*origin\\///g' | sort"
   tidy-remote = "!git remote prune origin | grep 'origin/' | sed 's/^.*origin\\///g' | sort"
   tidy-dr = "!zsh -c \"comm -12 <(git tidy-local) <(git tidy-remote-dr)\""
-  tidy = "!zsh -c \"comm -12 <(git tidy-local) <(git tidy-remote) | xargs git branch -D\""
+  tidy = "!zsh -c \"comm -12 <(git tidy-local) <(git tidy-remote) | xargs -r git branch -D\""
 
-  tidy-merged = "!git branch --merged | grep -vE '^(\\*|\\s*master\\s*$)' | xargs -n 1 git branch -d"
+  tidy-merged = "!git branch --merged | grep -vE '^(\\*|\\s*master\\s*$)' | xargs -n 1 -r git branch -d"
   tidy-merged-dr = "!git branch --merged | grep -vE '^(\\*|\\s*master\\s*$)'"
 
   # list aliases
