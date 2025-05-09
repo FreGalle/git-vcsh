@@ -4,7 +4,7 @@
 [includeIf "gitdir:~/src/"]
   path = ~/src/.gitconfig
 [core]
-  editor = nvim
+  editor = /opt/homebrew/bin/nvim
   pager = delta
   quotepath = false
   excludesfile = ~/.gitignore
