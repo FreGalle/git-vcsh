@@ -32,11 +32,39 @@ target/
 # IntelliJ files
 .idea
 *.iml
+.gradle-enterprise/
 
 # General
 *~
 *.swp
 *.orig
 .tags
-
-
+.develocity/
+# added by nex
+.venv
+# added by nex
+venv/
+# added by nex
+*.egg
+# added by nex
+*.egg-info/
+# added by nex
+.ipynb_checkpoints
+# added by nex
+.coverage
+# added by nex
+.coverage.*
+# added by nex
+nosetests.xml
+# added by nex
+.Python
+# added by nex
+pip-log.txt
+# added by nex
+dist/
+# added by nex
+*.hprof
+# added by nex
+hadoop-keytabs/
+# added by nex
+hadoop-krb5-configs/
