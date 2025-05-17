@@ -179,6 +179,7 @@
 [delta]
   navigate = true
   hyperlinks = true
+  hyperlinks-file-link-format = "file://{path}#{line}"
   features = decorations
   whitespace-error-style = 22 reverse
 [delta "decorations"]
