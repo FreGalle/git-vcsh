@@ -96,6 +96,9 @@
   # Prune deleted branches
   prune = fetch --prune
 
+  # Clean up branches that have been deleted on the remote
+  clean-gone = "!git branch -vv | rg '\\[.*gone.*\\]' | sed 's/^..//' | cut -d' ' -f1 | xargs -r git branch -D"
+
   # Show verbose output about tags, branches or remotes
   tags = tag -l
   branches = branch -a
@@ -115,15 +118,6 @@
   # instead of opening all files:
   # git reviewone foo.js bar.js
   reviewone = !nvim -p +\"tabdo Gdiff $REVIEW_BASE\" +\"let g:gitgutter_diff_base = '$REVIEW_BASE'\"
-
-  tidy-local = "!git branch | grep -v '^[+*]' | sed 's/ //g' | sort"
-  tidy-remote-dr = "!git remote prune origin --dry-run | grep 'origin/' | sed 's/^.*origin\\///g' | sort"
-  tidy-remote = "!git remote prune origin | grep 'origin/' | sed 's/^.*origin\\///g' | sort"
-  tidy-dr = "!zsh -c \"comm -12 <(git tidy-local) <(git tidy-remote-dr)\""
-  tidy = "!zsh -c \"comm -12 <(git tidy-local) <(git tidy-remote) | xargs -r git branch -D\""
-
-  tidy-merged = "!git branch --merged | grep -vE '^(\\*|\\s*master\\s*$)' | xargs -n 1 -r git branch -d"
-  tidy-merged-dr = "!git branch --merged | grep -vE '^(\\*|\\s*master\\s*$)'"
 
   gmm="!git checkout master && git pull && git checkout - && git merge master"
 
