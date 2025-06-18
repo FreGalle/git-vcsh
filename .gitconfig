@@ -147,7 +147,6 @@
   renames = copies
   submodule=log
   tool = kitty
-  colorMoved = default
 [difftool]
   prompt = false
   trustExitCode = true
