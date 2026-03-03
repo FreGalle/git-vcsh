@@ -182,3 +182,5 @@
   file-decoration-style = none
 [pull]
   ff = only
+[advice]
+	forceDeleteBranch = false
